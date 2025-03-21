@@ -1,0 +1,301 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Winky Sans", sans-serif;
+}
+
+body {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    padding: 5px;
+    border: 1px solid black;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+
+}
+
+h2 {
+    padding: 15px;
+}
+
+.sidebar {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    max-width: 1100px;
+}
+
+aside {
+    padding: 5px;
+    border: 1px solid black;
+    flex: 1;
+    text-align: center;
+}
+
+.sidebar-header {
+    border: 1px solid black;
+}
+
+.sidebar-content {
+    border: 1px solid black;
+    margin: 1px 0px;
+}
+
+.sidebar-content ul li {
+    margin: 0px;
+    padding: 15px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.sidebar-img {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+aside ul {
+    padding: 0px;
+    margin-top: 10px;
+    list-style: none;
+}
+
+aside ul li {
+    margin: 5px 0px;
+}
+
+aside ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 0px;
+}
+
+aside p {
+    color: black;
+    margin: 5px;
+    padding: 10px;
+}
+
+.sidebar-content p {
+    color: black;
+}
+
+.sidebar-content p ul li {
+    border: none;
+}
+
+.sidebar-content p {
+    padding: 10px;
+    text-align: left;
+}
+
+.sidebar-content:nth-child(3) ul {
+    margin-top: 0;
+}
+
+.sidebar-content:nth-child(3) ul li::before {
+    content: "- ";
+}
+
+.sidebar-content:nth-child(3) ul li {
+    font-style: italic;
+    text-align: left;
+    border: transparent;
+    line-height: 1.5;
+}
+
+.sidebar-content:nth-child(4) p {
+    text-align: center;
+}
+
+.sidebar-review {
+    padding: 15px;
+}
+
+.sidebar-review-content {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-review-content p {
+    padding: 10px;
+    text-align: left;
+}
+
+.sidebar-review-content p:nth-of-type(2) {
+    color: gray;
+}
+
+.sidebar-footer {
+    border: 1px solid black;
+    padding: 10px;
+    font-weight: bold;
+}
+
+
+.main-header {
+    border: 1px solid black;
+}
+
+.header-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.navbar-title {
+    display: flex;
+    align-items: center;
+}
+
+.header-img {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-menu ul li {
+    list-style: none;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    display: flex;
+}
+
+.main-content-side {
+    flex: 1;
+    border: 1px solid black;
+}
+
+.main-content h2 {
+    padding-left: 20px;
+}
+
+.main-content-side ul li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.main-content-side ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-content-body {
+    border: 1px solid black;
+    flex: 30%;
+}
+
+.main-content-body p {
+    padding: 10px;
+}
+
+.main-content-body ul li {
+    list-style: none;
+    padding: 10px;
+}
+
+.main-content-body ul li::before {
+    content: "- ";
+}
+
+.main-review {
+    flex: 1;
+    border: 1px solid black;
+}
+
+.main-review-box {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.review-box-content {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.review-box-content p {
+    padding: 10px;
+}
+
+.review-box-content p:nth-of-type(2) {
+    color: gray;
+}
+
+.main-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+/* Dark mode toggling */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .sidebar-img,
+.dark-mode .header-img{
+    filter: hue-rotate(180deg) invert(1);
+}
+
+.dark-mode *,
+.dark-mode ul li{
+    border-color: white;
+}
+.dark-mode h2,
+.dark-mode p{
+    color: white;
+}
+
+.dark-mode a {
+    color: cyan;
+}
+
+.dark-mode ul li a {
+    color: cyan;
+}
+
+.dark-mode .sidebar,
+.dark-mode .main-content,
+.dark-mode .sidebar-content,
+.dark-mode .sidebar-review-content,
+.dark-mode .review-box-content {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .sidebar-footer,
+.dark-mode .main-footer {
+    background-color: #181818;
+    color: white;
+}
