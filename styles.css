@@ -1,3 +1,4 @@
+/* web styling */
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -260,7 +261,11 @@ aside p {
 
 /* Dark mode toggling */
 .dark-mode {
-    background-color: #121212;
+    background-color: black;
+    color: white;
+}
+
+.dark-mode .navbar-toggle{
     color: white;
 }
 
@@ -299,3 +304,73 @@ aside p {
     background-color: #181818;
     color: white;
 }
+
+/*responsive navbar */
+.header-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.navbar-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.navbar-menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-menu ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .navbar-menu ul li {
+        padding: 10px 0;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+}
+
+/*Apply the res-navbar to dark mode*/
+.dark-mode .navbar-menu {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .navbar-menu ul li a {
+    color: cyan;
+}
+

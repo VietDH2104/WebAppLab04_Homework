@@ -1,21 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.getElementById("dark-mode-toggle");
-    const body = document.body;
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const themeIcon = document.getElementById("theme-icon");
 
-    if (localStorage.getItem("darkMode") === "enabled") {
-        body.classList.add("dark-mode");
-        toggleButton.textContent = "☀️";
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        themeIcon.src = "img/moon.png";
+    } else {
+        themeIcon.src = "img/sun.png";
     }
-    
-    toggleButton.addEventListener("click", function () {
-        body.classList.toggle("dark-mode");
 
-        if (body.classList.contains("dark-mode")) {
-            localStorage.setItem("darkMode", "enabled");
-            toggleButton.textContent = "☀️";
+    darkModeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            themeIcon.src = "img/moon.png";
+            localStorage.setItem("theme", "dark");
         } else {
-            localStorage.setItem("darkMode", "disabled");
-            toggleButton.textContent = "🌙";
+            themeIcon.src = "img/sun.png";
+            localStorage.setItem("theme", "light");
         }
     });
 });
+
+
+// darkmode for rep-navbar
+document.addEventListener("DOMContentLoaded", function () {
+    const navbarToggle = document.getElementById("navbar-toggle");
+    const navbarMenu = document.getElementById("navbar-menu");
+
+    navbarToggle.addEventListener("click", function () {
+        navbarMenu.classList.toggle("active");
+    });
+});
+
+
